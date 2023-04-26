@@ -1,0 +1,30 @@
+ Working with attributes.
+Add vector layer “ne_10m_populated_places_simple.zip” from Practical_No_4 folder.
+The selected layer is loaded in QGIS and we can see many points representing the
+populated places of the world.
+Right-click on the layer and select Open Attribute Table.
+Observe the table carefully. We are interested in the pop_max, click twice on the
+ field header to sort the column in descending order.
+Now we are ready to perform our query on these attributes. Click Select features using
+ an expression.
+In the “Select By Expression” window, expand the Fields and Values section and double- 
+click the pop_max label. This field name is added to the expression section at the bottom.
+ If we don’t have idea about the field values, we can click the Load all unique values to 
+see what the attribute values. For this exercise, we are looking for all features that have
+ a population greater than 1,000,000. So complete the expression as given below.pop_max>1000000
+A subset of points is now rendered in yellow. This is the result of query representing all places
+ from the dataset that have the pop_max attribute value greater than 1,000,000.
+To find the places that are country capitals and pop_max is greater than 1000000. Country capital 
+column is adm0cap and 1 represents country capital.pop_max>1000000 AND adm0cap=1
+Similarly, to find Indian location where pop_max greater than 100 and less than 1000000.
+pop_max>100 AND pop_max<1000000 AND sov0name='India'
+Return to main QGIS window, to do some further analysis on this subset of data right- click on the 
+ne_10m_populated_places_simple layer and select Properties.
+Click on General tab, scroll down to the Feature subset section and click on Query Builder button.
+Enter the same expression which we had entered earlier and click OK.pop_max>1000000 AND adm0cap=1
+Return in the main QGIS window, we can see all the points disappear except those which satisfy the
+ condition. This is because they are still selected. Click on the Deselect Features from All Layers 
+button under the Attributes toolbar and click on it.
+ 
+
+
